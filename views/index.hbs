@@ -149,10 +149,10 @@
   //Pulls data
   //Uses a callback because d3.json loading is asynchronous
   var pullData = function(settings,callback){
-	d3.json("fakeData.json", function (err, data){
+	d3.csv("fakeData.csv", function (err, data){
 		if (err) return console.warn(err);
     var newData = data;
-data.forEach(function(d,i){
+    data.forEach(function(d,i){
     var newValue = d.value + Math.floor((Math.random()*10) - 5)
         newData[i].value = newValue <= 0 ? 10 : newValue
     })
